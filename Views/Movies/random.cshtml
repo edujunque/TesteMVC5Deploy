@@ -1,0 +1,34 @@
+﻿@model vidly.ViewModel.IndexMovieViewModel
+@{
+    ViewBag.Title = "random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*
+    Comentario em Views
+*@
+
+@*@{
+        var className = Model.Movie.Count > 0 ? "popular" : null;
+    }*@
+
+@*<h2 class="@className">@Model.Movie.Name</h2>*@
+<h2>Movies</h2>
+
+@if (@Model.Movies.Count == 0)
+{
+    <p>There is no movie yet!</p>
+}
+else
+{
+    <ul>
+        @foreach (var movies in Model.Movies)
+        {
+            <li>@movies.Name</li>
+        }
+    </ul>
+}
+
+
+
